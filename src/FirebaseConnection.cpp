@@ -1,13 +1,9 @@
 #include "FirebaseConnection.h"
 #include "Credentials.h"
 
-const String FirebaseConnection::GATE_OPEN_PATH = "/open_request";
-
-const String FirebaseConnection::GATE_CLOSE_PATH = "/close_request";
-
-const String FirebaseConnection::GATE_STATE_PATH = "/gate_state";
-
-FirebaseConnection::FirebaseConnection() {}
+#define GATE_OPEN_PATH "/open_request"
+#define GATE_CLOSE_PATH "/close_request"
+#define GATE_STATE_PATH "/gate_state"
 
 void FirebaseConnection::connect()
 {
@@ -35,17 +31,17 @@ void FirebaseConnection::initFirebaseConnection()
 
 bool FirebaseConnection::getGateOpenRequest()
 {
-    return this->getPathBoolean(this->GATE_OPEN_PATH);
+    return this->getPathBoolean(GATE_OPEN_PATH);
 }
 
 bool FirebaseConnection::getGateCloseRequest()
 {
-    return this->getPathBoolean(this->GATE_CLOSE_PATH);
+    return this->getPathBoolean(GATE_CLOSE_PATH);
 }
 
 GateState FirebaseConnection::getGateState()
 {
-    if (Firebase.getString(this->firebaseData, this->GATE_STATE_PATH))
+    if (Firebase.getString(this->firebaseData, GATE_STATE_PATH))
     {
         if (this->firebaseData.dataType() == "string")
         {
@@ -63,12 +59,12 @@ GateState FirebaseConnection::getGateState()
 
 void FirebaseConnection::setGateOpenValue(bool value)
 {
-    this->setPathBoolean(this->GATE_OPEN_PATH, value);
+    this->setPathBoolean(GATE_OPEN_PATH, value);
 }
 
 void FirebaseConnection::setGateCloseValue(bool value)
 {
-    this->setPathBoolean(this->GATE_CLOSE_PATH, value);
+    this->setPathBoolean(GATE_CLOSE_PATH, value);
 }
 
 void FirebaseConnection::setGateState(GateState state)
@@ -76,13 +72,13 @@ void FirebaseConnection::setGateState(GateState state)
     switch (state)
     {
     case GateState::OPENING:
-        this->setPathString(this->GATE_STATE_PATH, "OPENING");
+        this->setPathString(GATE_STATE_PATH, "OPENING");
         break;
     case GateState::CLOSING:
-        this->setPathString(this->GATE_STATE_PATH, "CLOSING");
+        this->setPathString(GATE_STATE_PATH, "CLOSING");
         break;
     case GateState::NOT_MOVING:
-        this->setPathString(this->GATE_STATE_PATH, "NOT_MOVING");
+        this->setPathString(GATE_STATE_PATH, "NOT_MOVING");
         break;
     default:
         return;

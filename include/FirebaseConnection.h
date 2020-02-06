@@ -8,10 +8,6 @@
 class FirebaseConnection
 {
 private:
-    static const String GATE_OPEN_PATH;
-    static const String GATE_CLOSE_PATH;
-    static const String GATE_STATE_PATH;
-
     FirebaseData firebaseData;
 
     void initWifiConnection();
@@ -21,7 +17,6 @@ private:
     void setPathString(const String path, String value);
 
 public:
-    FirebaseConnection();
     void connect();
     bool getGateOpenRequest();
     bool getGateCloseRequest();
