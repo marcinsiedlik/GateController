@@ -7,6 +7,7 @@
 
 class FirebaseConnection
 {
+private:
     static const String GATE_OPEN_PATH;
     static const String GATE_CLOSE_PATH;
     static const String GATE_STATE_PATH;
@@ -21,7 +22,7 @@ class FirebaseConnection
 
 public:
     FirebaseConnection();
-    void begin();
+    void connect();
     bool getGateOpenRequest();
     bool getGateCloseRequest();
     GateState getGateState();

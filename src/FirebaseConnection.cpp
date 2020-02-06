@@ -9,7 +9,7 @@ const String FirebaseConnection::GATE_STATE_PATH = "/gate_state";
 
 FirebaseConnection::FirebaseConnection() {}
 
-void FirebaseConnection::begin()
+void FirebaseConnection::connect()
 {
     initWifiConnection();
     initFirebaseConnection();
