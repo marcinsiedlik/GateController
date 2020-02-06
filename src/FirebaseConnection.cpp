@@ -1,10 +1,15 @@
 #include "FirebaseConnection.h"
 #include "Credentials.h"
 
-#define FIREBASE_GATE_OPEN_PATH "/open_request"
-#define FIREBASE_GATE_CLOSE_PATH "/close_request"
+const String FirebaseConnection::GATE_OPEN_PATH = "/open_request";
 
-FirebaseConnection::FirebaseConnection()
+const String FirebaseConnection::GATE_CLOSE_PATH = "/close_request";
+
+const String FirebaseConnection::GATE_STATE_PATH = "/gate_state";
+
+FirebaseConnection::FirebaseConnection() {}
+
+void FirebaseConnection::begin()
 {
     initWifiConnection();
     initFirebaseConnection();
@@ -25,5 +30,81 @@ void FirebaseConnection::initFirebaseConnection()
 {
     Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
     Firebase.reconnectWiFi(true);
-    Firebase.setMaxRetry(firebaseData, 5);
+    Firebase.setMaxRetry(this->firebaseData, 5);
+}
+
+bool FirebaseConnection::getGateOpenRequest()
+{
+    return this->getPathBoolean(this->GATE_OPEN_PATH);
+}
+
+bool FirebaseConnection::getGateCloseRequest()
+{
+    return this->getPathBoolean(this->GATE_CLOSE_PATH);
+}
+
+GateState FirebaseConnection::getGateState()
+{
+    if (Firebase.getString(this->firebaseData, this->GATE_STATE_PATH))
+    {
+        if (this->firebaseData.dataType() == "string")
+        {
+            String gateState = this->firebaseData.stringData();
+            if (gateState == "OPENING")
+                return GateState::OPENING;
+            if (gateState == "CLOSING")
+                return GateState::CLOSING;
+            if (gateState == "NOT_MOVING")
+                return GateState::NOT_MOVING;
+        }
+    }
+    return GateState::NOT_MOVING;
+}
+
+void FirebaseConnection::setGateOpenValue(bool value)
+{
+    this->setPathBoolean(this->GATE_OPEN_PATH, value);
+}
+
+void FirebaseConnection::setGateCloseValue(bool value)
+{
+    this->setPathBoolean(this->GATE_CLOSE_PATH, value);
+}
+
+void FirebaseConnection::setGateState(GateState state)
+{
+    switch (state)
+    {
+    case GateState::OPENING:
+        this->setPathString(this->GATE_STATE_PATH, "OPENING");
+        break;
+    case GateState::CLOSING:
+        this->setPathString(this->GATE_STATE_PATH, "CLOSING");
+        break;
+    case GateState::NOT_MOVING:
+        this->setPathString(this->GATE_STATE_PATH, "NOT_MOVING");
+        break;
+    default:
+        return;
+    }
+}
+
+bool FirebaseConnection::getPathBoolean(const String path)
+{
+    if (Firebase.getBool(this->firebaseData, path))
+    {
+        if (this->firebaseData.dataType() == "boolean")
+            return this->firebaseData.boolData();
+    }
+    return false;
+}
+
+void FirebaseConnection::setPathBoolean(const String path, bool value)
+{
+    Firebase.setBool(this->firebaseData, path, value);
+}
+
+void FirebaseConnection::setPathString(const String path, String value)
+{
+    Firebase.setString(this->firebaseData, path, value);
 }

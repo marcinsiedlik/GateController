@@ -1,6 +1,6 @@
-enum GateState
+enum class GateState
 {
-    OPENING,
     CLOSING,
+    OPENING,
     NOT_MOVING
 };
