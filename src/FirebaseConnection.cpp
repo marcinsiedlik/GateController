@@ -1,34 +1,29 @@
 #include "FirebaseConnection.h"
-#include "FirebaseESP8266.h"
-#include <ESP8266WiFi.h>
+#include "Credentials.h"
 
-class FirebaseConnection
+#define FIREBASE_GATE_OPEN_PATH "/open_request"
+#define FIREBASE_GATE_CLOSE_PATH "/close_request"
+
+FirebaseConnection::FirebaseConnection()
 {
-    FirebaseData firebaseData();
+    initWifiConnection();
+    initFirebaseConnection();
+}
 
-    void initWifiConnection()
+void FirebaseConnection::initWifiConnection()
+{
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+    while (WiFi.status() != WL_CONNECTED)
     {
-        WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-        while (WiFi.status() != WL_CONNECTED)
-        {
-            Serial.print(".");
-            delay(500);
-        }
-        Serial.println("Connected with IP: ");
-        Serial.println(WiFi.localIP());
+        delay(500);
     }
+    Serial.print("Connected with IP: ");
+    Serial.println(WiFi.localIP());
+}
 
-    void initFirebaseConnection()
-    {
-        Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
-        Firebase.reconnectWiFi(true);
-        Firebase.setMaxRetry(firebaseData, 5);
-    }
-
-public:
-    FirebaseConnection()
-    {
-        initWifiConnection();
-        initFirebaseConnection();
-    };
-};
+void FirebaseConnection::initFirebaseConnection()
+{
+    Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+    Firebase.reconnectWiFi(true);
+    Firebase.setMaxRetry(firebaseData, 5);
+}
