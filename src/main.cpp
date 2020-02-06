@@ -1,7 +1,9 @@
 #include <Arduino.h>
+#include "FirebaseConnection.cpp"
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
+  FirebaseConnection connection();
 }
 
 void loop() {
