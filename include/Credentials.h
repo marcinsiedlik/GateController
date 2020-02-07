@@ -1,0 +1,4 @@
+#define FIREBASE_HOST "YOUR_HOST.firebaseio.com"
+#define FIREBASE_AUTH "YOUR_AUTH_KEY"
+#define WIFI_SSID "YOUR_SSID"
+#define WIFI_PASSWORD "PASSWORD"
