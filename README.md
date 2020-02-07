@@ -16,5 +16,5 @@ Just import project to IDE, set your Wifi and Firebase credentials in `Credentia
 
     /
         /close_request: Boolean
-    	/open_request: Boolean
-    	/gate_state: Enum
+        /open_request: Boolean
+        /gate_state: Enum
