@@ -37,4 +37,4 @@ configure<SettingsExtension> {
 
 rootProject.name = "GateController"
 
-include(":app")
+include(":mobile")
