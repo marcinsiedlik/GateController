@@ -62,3 +62,8 @@ vcs.xml
 
 # MacOS folder properties
 *.DS_Store
+
+# Private Properties files
+keys.properties
+keystore.properties
+upload.jks
