@@ -1,11 +1,9 @@
 import config.AppConfig
 import config.ConfigFields
 import properties.KeysProperties
-import properties.KeystoreProperties
 
 plugins {
-  alias(libs.plugins.android.app)
-  alias(libs.plugins.kotlin.android)
+  id("gatecontroller.android.application")
 }
 
 android {
@@ -15,28 +13,11 @@ android {
 
   defaultConfig {
     applicationId = AppConfig.applicationId
-    targetSdk = 34
     versionCode = 1
     versionName = "1.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     buildConfigField(ConfigFields.TypeString, ConfigFields.BasicAuth, keys.basicAuth)
-  }
-
-  signingConfigs {
-    named("debug") {
-      storeFile = rootProject.file("keystore/debug.jks")
-      storePassword = "android"
-      keyAlias = "android"
-      keyPassword = "android"
-    }
-    register("upload") {
-      val keystore = KeystoreProperties(rootProject)
-      storeFile = rootProject.file("keystore/upload.jks")
-      storePassword = keystore.storePassword
-      keyAlias = keystore.keyAlias
-      keyPassword = keystore.keyPassword
-    }
   }
 
   buildTypes {
@@ -60,13 +41,6 @@ android {
       signingConfig = signingConfigs.getByName("upload")
       buildConfigField(ConfigFields.TypeString, ConfigFields.BaseUrl, keys.prodUrl)
     }
-  }
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-  }
-  kotlinOptions {
-    jvmTarget = "1.8"
   }
   buildFeatures {
     compose = true

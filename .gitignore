@@ -65,5 +65,5 @@ vcs.xml
 
 # Private Properties files
 keys.properties
-keystore.properties
+upload.properties
 upload.jks
