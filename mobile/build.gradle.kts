@@ -1,43 +1,37 @@
+import config.AppConfig
+
 plugins {
-  id("com.android.application")
-  id("org.jetbrains.kotlin.android")
+  id("gatecontroller.android.application")
+  id("gatecontroller.android.application.signing")
 }
 
 android {
-  namespace = "pl.siedlik.gatecontroller"
-  compileSdk = 33
+  namespace = AppConfig.applicationId
 
   defaultConfig {
-    applicationId = "pl.siedlik.gatecontroller"
-    minSdk = 29
-    targetSdk = 33
+    applicationId = AppConfig.applicationId
     versionCode = 1
     versionName = "1.0"
-
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    vectorDrawables {
-      useSupportLibrary = true
-    }
+    proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
   }
 
   buildTypes {
-    release {
-      isMinifyEnabled = false
-      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+    debug {
+      signingConfig = signingConfigs.getByName("debug")
     }
-  }
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-  }
-  kotlinOptions {
-    jvmTarget = "1.8"
+    release {
+      isMinifyEnabled = true
+      isShrinkResources = true
+      signingConfig = signingConfigs.getByName("upload")
+    }
   }
   buildFeatures {
     compose = true
+    buildConfig = true
   }
   composeOptions {
-    kotlinCompilerExtensionVersion = "1.4.3"
+    kotlinCompilerExtensionVersion = "1.5.3"
   }
   packaging {
     resources {
