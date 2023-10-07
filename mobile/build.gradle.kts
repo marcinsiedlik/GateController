@@ -1,14 +1,11 @@
 import config.AppConfig
-import config.ConfigFields
-import properties.KeysProperties
 
 plugins {
   id("gatecontroller.android.application")
+  id("gatecontroller.android.application.signing")
 }
 
 android {
-  val keys = KeysProperties(rootProject)
-
   namespace = AppConfig.applicationId
 
   defaultConfig {
@@ -17,29 +14,16 @@ android {
     versionName = "1.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-    buildConfigField(ConfigFields.TypeString, ConfigFields.BasicAuth, keys.basicAuth)
   }
 
   buildTypes {
     debug {
-      applicationIdSuffix = ".debug"
-      versionNameSuffix = "-debug"
       signingConfig = signingConfigs.getByName("debug")
-      buildConfigField(ConfigFields.TypeString, ConfigFields.BaseUrl, keys.devUrl)
-    }
-    register("qa") {
-      isMinifyEnabled = true
-      isShrinkResources = true
-      applicationIdSuffix = ".qa"
-      versionNameSuffix = "-qa"
-      signingConfig = signingConfigs.getByName("debug")
-      buildConfigField(ConfigFields.TypeString, ConfigFields.BaseUrl, keys.devUrl)
     }
     release {
       isMinifyEnabled = true
       isShrinkResources = true
       signingConfig = signingConfigs.getByName("upload")
-      buildConfigField(ConfigFields.TypeString, ConfigFields.BaseUrl, keys.prodUrl)
     }
   }
   buildFeatures {

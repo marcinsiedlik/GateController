@@ -2,9 +2,10 @@ import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import pl.siedlik.gatecontroller.configureApplicationId
 import pl.siedlik.gatecontroller.configureKotlin
+import pl.siedlik.gatecontroller.configureProductFlavors
 import pl.siedlik.gatecontroller.configureSdkVersions
-import pl.siedlik.gatecontroller.configureSigningConfigs
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
 
@@ -17,7 +18,9 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
     extensions.configure<ApplicationExtension> {
       defaultConfig.targetSdk = 34
       configureSdkVersions()
-      configureSigningConfigs(this)
+      configureProductFlavors { flavor ->
+        configureApplicationId(flavor)
+      }
     }
     configureKotlin()
   }

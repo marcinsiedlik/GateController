@@ -3,6 +3,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import pl.siedlik.gatecontroller.configureKotlin
+import pl.siedlik.gatecontroller.configureProductFlavors
 import pl.siedlik.gatecontroller.configureSdkVersions
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
@@ -15,6 +16,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
     extensions.configure<LibraryExtension> {
       configureSdkVersions()
+      configureProductFlavors()
     }
     configureKotlin()
   }
