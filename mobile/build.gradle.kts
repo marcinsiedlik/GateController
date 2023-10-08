@@ -1,15 +1,13 @@
-import config.AppConfig
-
 plugins {
   id("gatecontroller.android.application")
   id("gatecontroller.android.application.signing")
 }
 
 android {
-  namespace = AppConfig.applicationId
+  namespace = "pl.siedlik.gatecontroller"
 
   defaultConfig {
-    applicationId = AppConfig.applicationId
+    applicationId = "pl.siedlik.gatecontroller"
     versionCode = 1
     versionName = "1.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
