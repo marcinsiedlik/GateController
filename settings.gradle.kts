@@ -30,3 +30,4 @@ include(":data:remote")
 include(":domain:remote")
 
 include(":ui:common:design")
+include(":ui:mobile:design")
