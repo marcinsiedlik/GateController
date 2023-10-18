@@ -31,3 +31,4 @@ include(":domain:remote")
 
 include(":ui:common:design")
 include(":ui:mobile:design")
+include(":ui:wear:design")
