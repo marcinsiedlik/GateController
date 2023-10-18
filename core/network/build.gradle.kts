@@ -5,6 +5,7 @@ plugins {
 
 android {
   namespace = "pl.siedlik.gatecontroller.core.network"
+  defaultConfig.consumerProguardFiles("proguard-rules.pro")
 }
 
 dependencies {

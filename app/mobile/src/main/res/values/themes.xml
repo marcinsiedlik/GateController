@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <bool name="isLight">true</bool>
+
+  <style name="Theme.GateController.Splash" parent="Theme.SplashScreen">
+    <item name="android:windowLightStatusBar">@bool/isLight</item>
+    <item name="android:windowLightNavigationBar">@bool/isLight</item>
+    <item name="windowSplashScreenBackground">@color/background</item>
+    <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+    <item name="postSplashScreenTheme">@style/Theme.GateController</item>
+  </style>
+
+  <style name="Theme.GateController" parent="android:Theme.Material.Light.NoActionBar">
+    <item name="android:windowLightStatusBar">@bool/isLight</item>
+    <item name="android:windowLightNavigationBar">@bool/isLight</item>
+    <item name="android:statusBarColor">@android:color/transparent</item>
+    <item name="android:navigationBarColor">@android:color/transparent</item>
+  </style>
+</resources>
