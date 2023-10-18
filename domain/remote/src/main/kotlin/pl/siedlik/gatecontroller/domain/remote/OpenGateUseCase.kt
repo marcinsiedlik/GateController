@@ -6,7 +6,7 @@ class OpenGateUseCase(
   private val gateRemoteRepository: GateRemoteRepository,
 ) {
 
-  suspend operator fun invoke() {
+  suspend operator fun invoke(): Result<Unit> = runCatching {
     gateRemoteRepository.openGate()
   }
 }
