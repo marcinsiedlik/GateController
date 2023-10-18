@@ -28,3 +28,5 @@ include(":core:model")
 include(":core:network")
 include(":data:remote")
 include(":domain:remote")
+
+include(":ui:common:design")

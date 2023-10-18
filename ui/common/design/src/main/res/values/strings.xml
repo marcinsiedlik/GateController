@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="gate">Gate</string>
+  <string name="gate_control">Gate control</string>
+  <string name="open">Open</string>
+  <string name="close">Close</string>
+  <string name="success_icon">Success icon</string>
+  <string name="failure_icon">Failure icon</string>
+  <string name="no_internet_connection">No internet connection</string>
+  <string name="connectivity_problems">Can\'t connect with the controller</string>
+  <string name="unexpected_error">Unexpected error happened</string>
+</resources>

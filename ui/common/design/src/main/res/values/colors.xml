@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="indigo_40">#2f3e9d</color>
+  <color name="indigo_80">#b0b8e8</color>
+
+  <!-- themed colors -->
+  <color name="foreground">@color/indigo_40</color>
+  <color name="background">@android:color/white</color>
+</resources>
