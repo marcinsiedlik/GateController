@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="gate">Brama</string>
+  <string name="gate_control">Sterowanie bramą</string>
+  <string name="open">Otwórz</string>
+  <string name="close">Zamknij</string>
+  <string name="success_icon">Ikona sukcesu</string>
+  <string name="failure_icon">Ikona błędu</string>
+  <string name="no_internet_connection">Brak połączenia z internetem</string>
+  <string name="connectivity_problems">Nie udało połączyć się z kontrolerem</string>
+  <string name="unexpected_error">Wystąpił nieoczekiwany błąd</string>
+</resources>

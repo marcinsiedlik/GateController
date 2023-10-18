@@ -17,6 +17,10 @@ gradlePlugin {
       id = "gatecontroller.android.application"
       implementationClass = "AndroidApplicationConventionPlugin"
     }
+    register("androidApplicationCompose") {
+      id = "gatecontroller.android.application.compose"
+      implementationClass = "AndroidApplicationComposeConventionPlugin"
+    }
     register("androidApplicationSigning") {
       id = "gatecontroller.android.application.signing"
       implementationClass = "AndroidApplicationSigningConventionPlugin"
@@ -24,6 +28,10 @@ gradlePlugin {
     register("androidLibrary") {
       id = "gatecontroller.android.library"
       implementationClass = "AndroidLibraryConventionPlugin"
+    }
+    register("androidLibraryCompose") {
+      id = "gatecontroller.android.library.compose"
+      implementationClass = "AndroidLibraryComposeConventionPlugin"
     }
     register("androidLibraryNetworking") {
       id = "gatecontroller.android.library.networking"
