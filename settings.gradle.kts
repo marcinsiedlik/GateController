@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "GateController"
 
-include(":mobile")
+include(":app:mobile")
 
 include(":core:dispatchers")
 include(":core:model")
