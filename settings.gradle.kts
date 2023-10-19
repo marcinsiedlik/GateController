@@ -34,3 +34,4 @@ include(":ui:mobile:design")
 include(":ui:wear:design")
 
 include(":feature:mobile:remote")
+include(":feature:wear:remote")
