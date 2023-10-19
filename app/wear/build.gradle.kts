@@ -11,7 +11,6 @@ android {
     applicationId = "pl.siedlik.gatecontroller"
     versionCode = 1
     versionName = "1.0"
-    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
   }
 
@@ -28,9 +27,9 @@ android {
 }
 
 dependencies {
-  implementation(projects.feature.mobile.remote)
-  implementation(projects.ui.mobile.design)
+  implementation(projects.feature.wear.remote)
   implementation(projects.ui.common.design)
+  implementation(projects.ui.wear.design)
 
   implementation(libs.koin.android)
   implementation(libs.kotlinx.coroutines.android)
@@ -38,7 +37,7 @@ dependencies {
   implementation(libs.androidx.splashscreen)
   implementation(libs.androidx.activityCompose)
   implementation(libs.compose.ui)
-  implementation(libs.compose.material)
-  debugImplementation(libs.compose.ui.tooling)
+  implementation(libs.compose.wear.material)
+  debugImplementation(libs.compose.wear.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
 }
