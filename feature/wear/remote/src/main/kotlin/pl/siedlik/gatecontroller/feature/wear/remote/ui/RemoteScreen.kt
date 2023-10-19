@@ -3,10 +3,10 @@ package pl.siedlik.gatecontroller.feature.wear.remote.ui
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.wear.compose.ui.tooling.preview.WearPreviewDevices
 import org.koin.androidx.compose.koinViewModel
 import pl.siedlik.gatecontroller.feature.wear.remote.viewmodel.RemoteUiState
@@ -15,7 +15,7 @@ import pl.siedlik.gatecontroller.feature.wear.remote.viewmodel.RemoteViewModel
 @Composable
 fun RemoteScreen() {
   val viewModel: RemoteViewModel = koinViewModel()
-  val state by viewModel.stateFlow.collectAsState()
+  val state by viewModel.stateFlow.collectAsStateWithLifecycle()
 
   RemoteScreen(
     state = state,

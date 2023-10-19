@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="indigo_40">#2f3e9d</color>
-  <color name="indigo_80">#b0b8e8</color>
+  <color name="indigo_40">#2F3E9D</color>
+  <color name="indigo_80">#B0B8E8</color>
+
+  <color name="white">#FFFFFF</color>
+  <color name="tutu">#FFFBFE</color>
+  <color name="grey">#1C1B1F</color>
+  <color name="black">#000000</color>
 
   <!-- themed colors -->
   <color name="foreground">@color/indigo_40</color>
-  <color name="background">@android:color/white</color>
+  <color name="background">@color/tutu</color>
 </resources>

@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import org.koin.androidx.compose.koinViewModel
 import pl.siedlik.gatecontroller.feature.mobile.remote.viewmodel.OperationStatus
 import pl.siedlik.gatecontroller.feature.mobile.remote.viewmodel.RemoteUiState
@@ -29,7 +29,7 @@ import pl.siedlik.gatecontroller.ui.mobile.design.snackbar.rememberSnackbarHostS
 @Composable
 fun RemoteScreen() {
   val viewModel: RemoteViewModel = koinViewModel()
-  val state by viewModel.stateFlow.collectAsState()
+  val state by viewModel.stateFlow.collectAsStateWithLifecycle()
 
   RemoteScreen(
     state = state,

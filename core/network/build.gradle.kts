@@ -13,9 +13,5 @@ dependencies {
 
   implementation(libs.koin.android)
   implementation(libs.kotlinx.coroutines.core)
-
-  implementation(libs.ktor.core)
-  implementation(libs.ktor.auth)
-  implementation(libs.ktor.logging)
-  implementation(libs.ktor.android)
+  implementation(libs.bundles.ktor)
 }
