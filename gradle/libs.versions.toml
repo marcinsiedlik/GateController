@@ -37,6 +37,7 @@ compose-ui-toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" 
 compose-material = { module = "androidx.compose.material3:material3" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.7.4" }
 compose-wear-material = { module = "androidx.wear.compose:compose-material", version = "1.2.0" }
+compose-wear-ui-tooling = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.0" }
 
 # build-logic dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
