@@ -12,4 +12,7 @@ dependencies {
 
   implementation(libs.compose.ui)
   implementation(libs.compose.wear.material)
+  debugImplementation(libs.compose.wear.ui.tooling)
+  debugImplementation(libs.compose.ui.tooling)
+  implementation(libs.compose.ui.toolingPreview)
 }

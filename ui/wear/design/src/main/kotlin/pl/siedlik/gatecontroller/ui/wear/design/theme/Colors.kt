@@ -1,4 +1,4 @@
-package pl.siedlik.gatecontroller.ui.wear.design
+package pl.siedlik.gatecontroller.ui.wear.design.theme
 
 import androidx.compose.ui.graphics.Color
 import androidx.wear.compose.material.Colors
