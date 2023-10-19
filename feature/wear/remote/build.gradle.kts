@@ -20,6 +20,6 @@ dependencies {
   debugImplementation(libs.compose.wear.ui.tooling)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
-  implementation(libs.androidx.lifecycle)
-  implementation(libs.androidx.lifecycleCompose)
+  implementation(libs.bundles.lifecycle)
+  implementation(libs.bundles.lifecycle.compose)
 }

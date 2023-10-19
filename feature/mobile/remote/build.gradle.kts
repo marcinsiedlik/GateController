@@ -15,12 +15,10 @@ dependencies {
 
   implementation(libs.koin.android)
   implementation(libs.koin.android.compose)
-
   implementation(libs.compose.ui)
   implementation(libs.compose.material)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
-
-  implementation(libs.androidx.lifecycle)
-  implementation(libs.androidx.lifecycleCompose)
+  implementation(libs.bundles.lifecycle)
+  implementation(libs.bundles.lifecycle.compose)
 }
