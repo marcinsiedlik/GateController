@@ -9,4 +9,5 @@ android {
 dependencies {
   implementation(projects.data.remote)
   implementation(libs.koin.core)
+  testImplementation(libs.bundles.test)
 }
