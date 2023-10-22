@@ -5,6 +5,7 @@ import org.gradle.kotlin.dsl.configure
 import pl.siedlik.gatecontroller.configureKotlin
 import pl.siedlik.gatecontroller.configureProductFlavors
 import pl.siedlik.gatecontroller.configureSdkVersions
+import pl.siedlik.gatecontroller.configureTests
 
 class AndroidLibraryConventionPlugin : Plugin<Project> {
 
@@ -19,5 +20,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
       configureProductFlavors()
     }
     configureKotlin()
+    configureTests()
   }
 }

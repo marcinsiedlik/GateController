@@ -5,7 +5,7 @@ koin = "3.5.0"
 coroutines = "1.7.3"
 ktor = "2.3.4"
 composeCompiler = "1.5.3"
-composeBom = "2023.10.00"
+composeBom = "2023.10.01"
 lifecycle = "2.6.2"
 
 [libraries]
@@ -16,6 +16,7 @@ koin-android-composeNavigation = { module = "io.insert-koin:koin-androidx-compos
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
 ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
@@ -39,7 +40,12 @@ compose-ui-toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" 
 compose-material = { module = "androidx.compose.material3:material3" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.7.4" }
 compose-wear-material = { module = "androidx.wear.compose:compose-material", version = "1.2.0" }
-compose-wear-ui-tooling = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.0" }
+compose-wear-ui-toolingPreview = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.0" }
+
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.0" }
+mockk = { module = "io.mockk:mockk", version = "1.13.8" }
+kotest = { module = "io.kotest:kotest-assertions-core", version = "5.7.2" }
+turbine = { module = "app.cash.turbine:turbine", version = "1.0.0" }
 
 # build-logic dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -49,6 +55,7 @@ kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ve
 ktor = ["ktor-core", "ktor-auth", "ktor-logging", "ktor-android"]
 lifecycle = ["lifecycle-viewmodel", "lifecycle-viewmodel-savedState"]
 lifecycle-compose = ["lifecycle-viewmodel-compose", "lifecycle-runtime-compose"]
+test = ["kotlinx-coroutines-test", "junit-jupiter", "mockk", "kotest", "turbine"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

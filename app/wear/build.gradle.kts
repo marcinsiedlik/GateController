@@ -38,7 +38,7 @@ dependencies {
   implementation(libs.androidx.activityCompose)
   implementation(libs.compose.ui)
   implementation(libs.compose.wear.material)
-  debugImplementation(libs.compose.wear.ui.tooling)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
+  implementation(libs.compose.wear.ui.toolingPreview)
 }
