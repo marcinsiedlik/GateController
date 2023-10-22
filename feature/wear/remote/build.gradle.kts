@@ -22,4 +22,5 @@ dependencies {
   implementation(libs.compose.wear.ui.toolingPreview)
   implementation(libs.bundles.lifecycle)
   implementation(libs.bundles.lifecycle.compose)
+  testImplementation(libs.bundles.test)
 }
