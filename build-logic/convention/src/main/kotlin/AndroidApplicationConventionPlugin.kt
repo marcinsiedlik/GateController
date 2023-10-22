@@ -6,6 +6,7 @@ import pl.siedlik.gatecontroller.configureApplicationId
 import pl.siedlik.gatecontroller.configureKotlin
 import pl.siedlik.gatecontroller.configureProductFlavors
 import pl.siedlik.gatecontroller.configureSdkVersions
+import pl.siedlik.gatecontroller.configureTests
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
 
@@ -23,5 +24,6 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
       }
     }
     configureKotlin()
+    configureTests()
   }
 }
