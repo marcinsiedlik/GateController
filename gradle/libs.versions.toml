@@ -5,7 +5,7 @@ koin = "3.5.0"
 coroutines = "1.7.3"
 ktor = "2.3.4"
 composeCompiler = "1.5.3"
-composeBom = "2023.10.00"
+composeBom = "2023.10.01"
 lifecycle = "2.6.2"
 
 [libraries]
@@ -39,7 +39,7 @@ compose-ui-toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" 
 compose-material = { module = "androidx.compose.material3:material3" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.7.4" }
 compose-wear-material = { module = "androidx.wear.compose:compose-material", version = "1.2.0" }
-compose-wear-ui-tooling = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.0" }
+compose-wear-ui-toolingPreview = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.0" }
 
 # build-logic dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }

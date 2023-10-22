@@ -17,9 +17,9 @@ dependencies {
   implementation(libs.koin.android.compose)
   implementation(libs.compose.ui)
   implementation(libs.compose.wear.material)
-  debugImplementation(libs.compose.wear.ui.tooling)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
+  implementation(libs.compose.wear.ui.toolingPreview)
   implementation(libs.bundles.lifecycle)
   implementation(libs.bundles.lifecycle.compose)
 }
