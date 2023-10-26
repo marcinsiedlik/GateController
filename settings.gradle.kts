@@ -35,5 +35,6 @@ include(":ui:common:design")
 include(":ui:mobile:design")
 include(":ui:wear:design")
 
+include(":feature:car:remote")
 include(":feature:mobile:remote")
 include(":feature:wear:remote")
