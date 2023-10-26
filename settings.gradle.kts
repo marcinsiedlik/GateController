@@ -24,6 +24,7 @@ rootProject.name = "GateController"
 include(":app:mobile")
 include(":app:wear")
 
+include(":core:car")
 include(":core:dispatchers")
 include(":core:model")
 include(":core:network")
