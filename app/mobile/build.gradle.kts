@@ -15,6 +15,10 @@ android {
     proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
   }
 
+  buildFeatures {
+    buildConfig = true
+  }
+
   buildTypes {
     debug {
       signingConfig = signingConfigs.getByName("debug")
@@ -28,6 +32,8 @@ android {
 }
 
 dependencies {
+  implementation(projects.core.car)
+  implementation(projects.feature.car.remote)
   implementation(projects.feature.mobile.remote)
   implementation(projects.ui.mobile.design)
   implementation(projects.ui.common.design)
@@ -39,6 +45,7 @@ dependencies {
   implementation(libs.androidx.activityCompose)
   implementation(libs.compose.ui)
   implementation(libs.compose.material)
+  implementation(libs.androidx.car)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
 }
