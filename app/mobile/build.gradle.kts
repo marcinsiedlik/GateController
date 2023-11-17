@@ -1,5 +1,5 @@
 plugins {
-  id("gatecontroller.android.application")
+  id("gatecontroller.android.application.mobile")
   id("gatecontroller.android.application.signing")
   id("gatecontroller.android.application.compose")
 }
@@ -8,9 +8,6 @@ android {
   namespace = "pl.siedlik.gatecontroller"
 
   defaultConfig {
-    applicationId = "pl.siedlik.gatecontroller"
-    versionCode = 1
-    versionName = "1.0"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
   }

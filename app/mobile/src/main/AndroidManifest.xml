@@ -31,7 +31,9 @@
 
     <activity
         android:name=".main.MainActivity"
-        android:exported="true">
+        android:exported="true"
+        android:screenOrientation="userPortrait"
+        tools:ignore="LockedOrientationActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
