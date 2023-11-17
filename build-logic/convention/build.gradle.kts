@@ -13,9 +13,13 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    register("androidApplication") {
-      id = "gatecontroller.android.application"
-      implementationClass = "AndroidApplicationConventionPlugin"
+    register("androidApplicationMobile") {
+      id = "gatecontroller.android.application.mobile"
+      implementationClass = "AndroidApplicationMobileConventionPlugin"
+    }
+    register("androidApplicationWear") {
+      id = "gatecontroller.android.application.wear"
+      implementationClass = "AndroidApplicationWearConventionPlugin"
     }
     register("androidApplicationCompose") {
       id = "gatecontroller.android.application.compose"
