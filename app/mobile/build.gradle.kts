@@ -23,7 +23,7 @@ android {
     release {
       isMinifyEnabled = true
       isShrinkResources = true
-      signingConfig = signingConfigs.getByName("upload")
+      signingConfig = signingConfigs.findByName("upload")
     }
   }
 }

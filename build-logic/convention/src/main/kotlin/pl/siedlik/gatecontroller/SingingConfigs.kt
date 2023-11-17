@@ -5,21 +5,25 @@ import org.gradle.api.Project
 
 fun Project.configureSigningConfigs(commonExtension: CommonExtension<*, *, *, *, *>) {
   commonExtension.signingConfigs {
+    val debugKeystoreFile = rootProject.file("keystore/debug.jks")
+    val uploadKeystoreFile = rootProject.file("keystore/upload.jks")
+    val uploadPropertiesFile = rootProject.file("keystore/upload.properties")
+
     named("debug") {
-      storeFile = rootProject.file("keystore/debug.jks")
+      storeFile = debugKeystoreFile
       storePassword = "android"
       keyAlias = "android"
       keyPassword = "android"
     }
 
-    register("upload") {
-      val propertiesFile = rootProject.file("keystore/upload.properties")
-      val properties = parsePropertiesFile(propertiesFile)
-
-      storeFile = rootProject.file("keystore/upload.jks")
-      storePassword = properties["storePassword"]
-      keyAlias = properties["keyAlias"]
-      keyPassword = properties["keyPassword"]
+    if (uploadKeystoreFile.exists() && uploadPropertiesFile.exists()) {
+      register("upload") {
+        val properties = parsePropertiesFile(uploadPropertiesFile)
+        storeFile = uploadKeystoreFile
+        storePassword = properties["storePassword"]
+        keyAlias = properties["keyAlias"]
+        keyPassword = properties["keyPassword"]
+      }
     }
   }
 }
