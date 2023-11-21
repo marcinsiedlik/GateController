@@ -12,6 +12,7 @@ dependencies {
   implementation(projects.domain.remote)
   implementation(projects.ui.common.design)
 
+  implementation(platform(libs.koin.bom))
   implementation(libs.koin.android)
   implementation(libs.kotlinx.coroutines.android)
   implementation(libs.androidx.car)

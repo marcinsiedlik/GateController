@@ -11,6 +11,7 @@ dependencies {
   implementation(projects.core.network)
   implementation(projects.core.model)
 
+  implementation(platform(libs.koin.bom))
   implementation(libs.koin.core)
   implementation(libs.kotlinx.coroutines.core)
   implementation(libs.ktor.core)
