@@ -13,6 +13,7 @@ dependencies {
   implementation(projects.ui.common.design)
   implementation(projects.ui.mobile.design)
 
+  implementation(platform(libs.koin.bom))
   implementation(libs.koin.android)
   implementation(libs.koin.android.compose)
   implementation(libs.compose.ui)

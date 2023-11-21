@@ -8,6 +8,8 @@ android {
 
 dependencies {
   implementation(projects.data.remote)
+
+  implementation(platform(libs.koin.bom))
   implementation(libs.koin.core)
   testImplementation(libs.bundles.test)
 }
