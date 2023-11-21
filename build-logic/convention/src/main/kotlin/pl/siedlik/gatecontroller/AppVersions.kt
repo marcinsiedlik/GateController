@@ -10,7 +10,7 @@ enum class AppPlatform(val versionSuffix: Int) {
 object AppVersion {
 
   private const val versionMajor = 2
-  private const val versionMinor = 2
+  private const val versionMinor = 3
 
   const val applicationId = "pl.siedlik.gatecontroller"
   const val versionName = "$versionMinor.$versionMinor"
