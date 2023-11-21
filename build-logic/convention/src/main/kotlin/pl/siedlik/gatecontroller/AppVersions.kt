@@ -10,10 +10,10 @@ enum class AppPlatform(val versionSuffix: Int) {
 object AppVersion {
 
   private const val versionMajor = 2
-  private const val versionMinor = 3
+  private const val versionMinor = 4
 
   const val applicationId = "pl.siedlik.gatecontroller"
-  const val versionName = "$versionMinor.$versionMinor"
+  const val versionName = "$versionMajor.$versionMinor"
 
   fun getVersionCode(platform: AppPlatform): Int =
     (versionMajor * 10000) + (versionMinor * 1000) + platform.versionSuffix
