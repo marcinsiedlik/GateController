@@ -14,7 +14,7 @@ enum class FlavorDimension {
 @Suppress("EnumEntryName")
 enum class AppFlavor(val dimension: FlavorDimension) {
   dev(FlavorDimension.type),
-  production(FlavorDimension.type),
+  prod(FlavorDimension.type),
 }
 
 fun CommonExtension<*, *, *, *, *>.configureProductFlavors(
@@ -57,7 +57,7 @@ fun ProductFlavor.configureNetwork(project: Project, flavor: AppFlavor) {
   val properties = parsePropertiesFile(propertiesFile)
   val baseUrl = when (flavor) {
     AppFlavor.dev -> properties["dev_url"]
-    AppFlavor.production -> properties["prod_url"]
+    AppFlavor.prod -> properties["prod_url"]
   }
   buildConfigString("BASE_URL", baseUrl)
   buildConfigString("AUTH_TOKEN", properties["auth_token"])
