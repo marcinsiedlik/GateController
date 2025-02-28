@@ -1,19 +1,18 @@
 [versions]
 kotlin = "2.1.10"
 agp = "8.8.2"
-koinBom = "3.5.3"
-coroutines = "1.7.3"
-ktor = "2.3.7"
-composeBom = "2023.10.01"
-lifecycle = "2.6.2"
-carApp = "1.4.0-rc02"
+koinBom = "4.0.2"
+coroutines = "1.10.1"
+ktor = "3.1.1"
+composeBom = "2025.02.00"
+lifecycle = "2.8.7"
+carApp = "1.4.0"
 
 [libraries]
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-core = { module = "io.insert-koin:koin-core" }
 koin-android = { module = "io.insert-koin:koin-android" }
 koin-android-compose = { module = "io.insert-koin:koin-androidx-compose" }
-koin-android-composeNavigation = { module = "io.insert-koin:koin-androidx-compose-navigation" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
@@ -24,9 +23,9 @@ ktor-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 ktor-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 
-androidx-core = { module = "androidx.core:core-ktx", version = "1.12.0" }
+androidx-core = { module = "androidx.core:core-ktx", version = "1.15.0" }
 androidx-splashscreen = { module = "androidx.core:core-splashscreen", version = "1.0.1" }
-androidx-activityCompose = { module = "androidx.activity:activity-compose", version = "1.8.2" }
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version = "1.10.1" }
 
 androidx-car = { module = "androidx.car.app:app", version.ref = "carApp" }
 androidx-car-projected = { module = "androidx.car.app:app-projected", version.ref = "carApp" }
@@ -43,14 +42,15 @@ compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-toolingPreview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material = { module = "androidx.compose.material3:material3" }
-compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.7.6" }
-compose-wear-material = { module = "androidx.wear.compose:compose-material", version = "1.2.1" }
-compose-wear-ui-toolingPreview = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.2.1" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.8.8" }
+compose-wear-material = { module = "androidx.wear.compose:compose-material", version = "1.4.1" }
+compose-wear-ui-toolingPreview = { module = "androidx.wear.compose:compose-ui-tooling", version = "1.4.1" }
 
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.10.1" }
-mockk = { module = "io.mockk:mockk", version = "1.13.8" }
-kotest = { module = "io.kotest:kotest-assertions-core", version = "5.8.0" }
-turbine = { module = "app.cash.turbine:turbine", version = "1.0.0" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version = "5.12.0" }
+junit-plaftormLauncher = { module = "org.junit.platform:junit-platform-launcher", version = "1.12.0" }
+mockk = { module = "io.mockk:mockk", version = "1.13.17" }
+kotest = { module = "io.kotest:kotest-assertions-core", version = "5.9.1" }
+turbine = { module = "app.cash.turbine:turbine", version = "1.2.0" }
 
 # build-logic dependencies
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -60,7 +60,7 @@ kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", ve
 ktor = ["ktor-core", "ktor-auth", "ktor-logging", "ktor-android"]
 lifecycle = ["lifecycle-viewmodel", "lifecycle-viewmodel-savedState"]
 lifecycle-compose = ["lifecycle-viewmodel-compose", "lifecycle-runtime-compose"]
-test = ["kotlinx-coroutines-test", "junit-jupiter", "mockk", "kotest", "turbine"]
+test = ["kotlinx-coroutines-test", "junit-jupiter", "mockk", "kotest", "turbine", "junit-plaftormLauncher"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
