@@ -1,9 +1,7 @@
 plugins {
-  with(libs.plugins) {
-    alias(android.app) apply false
-    alias(android.lib) apply false
-    alias(kotlin.jvm) apply false
-    alias(kotlin.android) apply false
-    alias(kotlin.compose) apply false
-  }
+  alias(libs.plugins.android.app) apply false
+  alias(libs.plugins.android.lib) apply false
+  alias(libs.plugins.kotlin.jvm) apply false
+  alias(libs.plugins.kotlin.android) apply false
+  alias(libs.plugins.kotlin.compose) apply false
 }
