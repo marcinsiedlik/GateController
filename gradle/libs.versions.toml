@@ -4,7 +4,6 @@ agp = "8.8.2"
 koinBom = "3.5.3"
 coroutines = "1.7.3"
 ktor = "2.3.7"
-composeCompiler = "1.5.7"
 composeBom = "2023.10.01"
 lifecycle = "2.6.2"
 carApp = "1.4.0-rc02"
@@ -39,7 +38,6 @@ lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel
 lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 
-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "composeCompiler" }
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
