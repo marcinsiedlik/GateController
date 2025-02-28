@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.21"
+kotlin = "2.1.10"
 agp = "8.8.2"
 koinBom = "3.5.3"
 coroutines = "1.7.3"
@@ -67,6 +67,7 @@ test = ["kotlinx-coroutines-test", "junit-jupiter", "mockk", "kotest", "turbine"
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-lib = { id = "com.android.library", version.ref = "agp" }
