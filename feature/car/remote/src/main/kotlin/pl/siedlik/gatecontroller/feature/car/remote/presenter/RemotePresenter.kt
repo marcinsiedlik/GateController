@@ -21,7 +21,7 @@ internal class RemotePresenter(
   private val state = MutableStateFlow(RemoteState())
   val stateFlow = state.asStateFlow()
 
-  private val messageEvent = Channel<@receiver:StringRes Int>()
+  private val messageEvent = Channel<Int>()
   val messagesFlow = messageEvent.receiveAsFlow()
 
   fun open() {

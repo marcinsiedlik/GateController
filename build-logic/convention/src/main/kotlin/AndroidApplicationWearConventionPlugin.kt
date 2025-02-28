@@ -19,7 +19,7 @@ class AndroidApplicationWearConventionPlugin : Plugin<Project> {
     }
 
     extensions.configure<ApplicationExtension> {
-      defaultConfig.targetSdk = 33
+      defaultConfig.targetSdk = 35
       configureSdkVersions()
       configureAppVersion(platform = AppPlatform.Wear)
       configureProductFlavors { flavor ->

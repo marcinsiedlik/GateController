@@ -10,8 +10,8 @@ import pl.siedlik.gatecontroller.ui.wear.design.theme.GateControllerTheme
 class MainActivity : ComponentActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
     installSplashScreen()
+    super.onCreate(savedInstanceState)
     setComposeContent()
   }
 
