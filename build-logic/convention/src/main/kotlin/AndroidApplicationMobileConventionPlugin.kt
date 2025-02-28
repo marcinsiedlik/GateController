@@ -19,7 +19,7 @@ class AndroidApplicationMobileConventionPlugin : Plugin<Project> {
     }
 
     extensions.configure<ApplicationExtension> {
-      defaultConfig.targetSdk = 34
+      defaultConfig.targetSdk = 35
       configureSdkVersions()
       configureAppVersion(platform = AppPlatform.Mobile)
       configureProductFlavors { flavor ->
