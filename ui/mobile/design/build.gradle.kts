@@ -12,6 +12,7 @@ dependencies {
 
   implementation(libs.compose.ui)
   implementation(libs.compose.material)
+  implementation(libs.compose.material.icons)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
 }

@@ -17,12 +17,12 @@ enum class AppFlavor(val dimension: FlavorDimension) {
   prod(FlavorDimension.type),
 }
 
-fun CommonExtension<*, *, *, *, *, *>.configureProductFlavors(
+fun CommonExtension.configureProductFlavors(
   configurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {},
 ) {
   flavorDimensions += FlavorDimension.type.name
-  productFlavors {
-    AppFlavor.values().forEach { flavor ->
+  with(productFlavors) {
+    AppFlavor.entries.forEach { flavor ->
       create(flavor.name) {
         dimension = flavor.dimension.name
         configurationBlock(flavor)
@@ -31,11 +31,11 @@ fun CommonExtension<*, *, *, *, *, *>.configureProductFlavors(
   }
 }
 
-fun CommonExtension<*, *, *, *, *, *>.getProductFlavors(
+fun CommonExtension.getProductFlavors(
   configurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {},
 ) {
-  productFlavors {
-    AppFlavor.values().forEach { flavor ->
+  with(productFlavors) {
+    AppFlavor.entries.forEach { flavor ->
       getByName(flavor.name) {
         configurationBlock(flavor)
       }

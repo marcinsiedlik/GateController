@@ -43,6 +43,7 @@ dependencies {
   implementation(libs.androidx.activityCompose)
   implementation(libs.compose.ui)
   implementation(libs.compose.material)
+  implementation(libs.compose.material.icons)
   implementation(libs.androidx.car)
   debugImplementation(libs.compose.ui.tooling)
   implementation(libs.compose.ui.toolingPreview)
