@@ -15,11 +15,10 @@ class AndroidApplicationMobileConventionPlugin : Plugin<Project> {
   override fun apply(target: Project) = with(target) {
     with(pluginManager) {
       apply("com.android.application")
-      apply("org.jetbrains.kotlin.android")
     }
 
     extensions.configure<ApplicationExtension> {
-      defaultConfig.targetSdk = 35
+      defaultConfig.targetSdk = 37
       configureSdkVersions()
       configureAppVersion(platform = AppPlatform.Mobile)
       configureProductFlavors { flavor ->

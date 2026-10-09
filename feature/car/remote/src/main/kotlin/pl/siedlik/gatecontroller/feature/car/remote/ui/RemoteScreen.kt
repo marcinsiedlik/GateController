@@ -8,6 +8,7 @@ import androidx.car.app.Screen
 import androidx.car.app.model.Action
 import androidx.car.app.model.GridItem
 import androidx.car.app.model.GridTemplate
+import androidx.car.app.model.Header
 import androidx.car.app.model.Item
 import androidx.car.app.model.ItemList
 import androidx.car.app.model.Template
@@ -64,8 +65,12 @@ class RemoteScreen(carContext: CarContext) : Screen(carContext), KoinComponent {
       build()
     }
     return GridTemplate.Builder().run {
-      setHeaderAction(Action.APP_ICON)
-      setTitle(carContext.getString(StringR.gate_control))
+      setHeader(
+        Header.Builder()
+          .setStartHeaderAction(Action.APP_ICON)
+          .setTitle(carContext.getString(StringR.gate_control))
+          .build()
+      )
       setSingleList(gateActions)
       build()
     }
